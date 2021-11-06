@@ -1,4 +1,4 @@
-program cascade_train;
+program hatsunearu_cascade_train;
 
 {$APPTYPE CONSOLE}
 {$POINTERMATH ON}

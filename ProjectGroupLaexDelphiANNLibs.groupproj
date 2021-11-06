@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5A421DCA-5675-49BE-BB99-3F54EF579A63}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TensorFlow\example\TensorFlowTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FANN\example\cascade_train\fann_cascade_train.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HATSUNEARU-FANN\example\cascade_train\hatsunearu_cascade_train.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TensorFlowTest">
+        <MSBuild Projects="TensorFlow\example\TensorFlowTest.dproj"/>
+    </Target>
+    <Target Name="TensorFlowTest:Clean">
+        <MSBuild Projects="TensorFlow\example\TensorFlowTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TensorFlowTest:Make">
+        <MSBuild Projects="TensorFlow\example\TensorFlowTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="fann_cascade_train">
+        <MSBuild Projects="FANN\example\cascade_train\fann_cascade_train.dproj"/>
+    </Target>
+    <Target Name="fann_cascade_train:Clean">
+        <MSBuild Projects="FANN\example\cascade_train\fann_cascade_train.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="fann_cascade_train:Make">
+        <MSBuild Projects="FANN\example\cascade_train\fann_cascade_train.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="hatsunearu_cascade_train">
+        <MSBuild Projects="HATSUNEARU-FANN\example\cascade_train\hatsunearu_cascade_train.dproj"/>
+    </Target>
+    <Target Name="hatsunearu_cascade_train:Clean">
+        <MSBuild Projects="HATSUNEARU-FANN\example\cascade_train\hatsunearu_cascade_train.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="hatsunearu_cascade_train:Make">
+        <MSBuild Projects="HATSUNEARU-FANN\example\cascade_train\hatsunearu_cascade_train.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TensorFlowTest;fann_cascade_train;hatsunearu_cascade_train"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TensorFlowTest:Clean;fann_cascade_train:Clean;hatsunearu_cascade_train:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TensorFlowTest:Make;fann_cascade_train:Make;hatsunearu_cascade_train:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
