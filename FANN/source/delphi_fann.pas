@@ -1278,7 +1278,7 @@ const
     This function appears in FANN >= 1.1.0.
   *)
   // FANN_EXTERNAL void FANN_API fann_set_error_log(struct fann_error *errdat, FILE * log_file);
-procedure fann_set_error_log(errdat: pfann_error; Log_File: PFile); stdcall; external FANN_DLL_FILE name '_fann_set_error_log@8';
+procedure fann_set_error_log(errdat: pfann_error; Log_File: PFile); stdcall; external FANN_DLL_FILE name 'fann_set_error_log';// '_fann_set_error_log@8';
 
 (* Function: fann_get_errno
 
@@ -1299,7 +1299,7 @@ function fann_get_errno(errdat: pfann_error): Tfann_errno_enum; stdcall; externa
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_reset_errno(struct fann_error *errdat);
-procedure fann_reset_errno(errdat: pfann_error); stdcall; external FANN_DLL_FILE name '_fann_reset_errno@4';
+procedure fann_reset_errno(errdat: pfann_error); stdcall; external FANN_DLL_FILE name 'fann_reset_errno';// '_fann_reset_errno@4';
 
 (* Function: fann_reset_errstr
 
@@ -1308,7 +1308,7 @@ procedure fann_reset_errno(errdat: pfann_error); stdcall; external FANN_DLL_FILE
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_reset_errstr(struct fann_error *errdat);
-procedure fann_reset_errstr(errdat: pfann_error); stdcall; external FANN_DLL_FILE name '_fann_reset_errstr@4';
+procedure fann_reset_errstr(errdat: pfann_error); stdcall; external FANN_DLL_FILE name 'fann_reset_errstr';// '_fann_reset_errstr@4';
 
 (* Function: fann_get_errstr
 
@@ -1319,7 +1319,7 @@ procedure fann_reset_errstr(errdat: pfann_error); stdcall; external FANN_DLL_FIL
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL char *FANN_API fann_get_errstr(struct fann_error *errdat);
-function fann_get_errstr(errdat: pfann_error): PFANNChar; stdcall; external FANN_DLL_FILE name '_fann_get_errstr@4';
+function fann_get_errstr(errdat: pfann_error): PFANNChar; stdcall; external FANN_DLL_FILE name 'fann_get_errstr';// '_fann_get_errstr@4';
 
 (* Function: fann_print_error
 
@@ -1328,7 +1328,7 @@ function fann_get_errstr(errdat: pfann_error): PFANNChar; stdcall; external FANN
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_print_error(struct fann_error *errdat);
-procedure fann_print_error(errdat: pfann_error); stdcall; external FANN_DLL_FILE name '_fann_print_error@4';
+procedure fann_print_error(errdat: pfann_error); stdcall; external FANN_DLL_FILE name 'fann_print_error';// '_fann_print_error@4';
 
 // ------------------------- fann_io.pas ---------------------
 
@@ -1349,7 +1349,7 @@ procedure fann_print_error(errdat: pfann_error); stdcall; external FANN_DLL_FILE
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL struct fann *FANN_API fann_create_from_file(const char *configuration_file);
-function fann_create_from_file(const configuration_file: PFANNChar): pfann; stdcall; external FANN_DLL_FILE name '_fann_create_from_file@4';
+function fann_create_from_file(const configuration_file: PFANNChar): pfann; stdcall; external FANN_DLL_FILE name 'fann_create_from_file';// '_fann_create_from_file@4';
 
 (* Function: fann_save
 
@@ -1373,7 +1373,7 @@ function fann_create_from_file(const configuration_file: PFANNChar): pfann; stdc
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL int FANN_API fann_save(struct fann *ann, const char *configuration_file);
-procedure fann_save(ann: pfann; const configuration_file: PFANNChar); stdcall; external FANN_DLL_FILE name '_fann_save@8';
+procedure fann_save(ann: pfann; const configuration_file: PFANNChar); stdcall; external FANN_DLL_FILE name 'fann_save';// '_fann_save@8';
 
 (* Function: fann_save_to_fixed
 
@@ -1409,7 +1409,7 @@ procedure fann_save(ann: pfann; const configuration_file: PFANNChar); stdcall; e
 *)
 // FANN_EXTERNAL int FANN_API fann_save_to_fixed(struct fann *ann, const char *configuration_file);
 function fann_save_to_fixed(ann: pfann; const configuration_file: PFANNChar): integer; stdcall;
-  external FANN_DLL_FILE name '_fann_save_to_fixed@8';
+  external FANN_DLL_FILE name 'fann_save_to_fixed';// '_fann_save_to_fixed@8';
 
 // ------------------------- fann_cascade.pas ---------------------
 (* Section: FANN Cascade Training
@@ -1463,7 +1463,7 @@ function fann_save_to_fixed(ann: pfann; const configuration_file: PFANNChar): in
 // unsigned int neurons_between_reports,
 // float desired_error);
 procedure fann_cascadetrain_on_data(ann: pfann; Data: pfann_train_data; max_neurons: Cardinal; neurons_between_reports: Cardinal;
-  desired_error: Float); stdcall; external FANN_DLL_FILE name '_fann_cascadetrain_on_data@20';
+  desired_error: Float); stdcall; external FANN_DLL_FILE name 'fann_cascadetrain_on_data';// '_fann_cascadetrain_on_data@20';
 (* Function: fann_cascadetrain_on_file
 
   Does the same as <fann_cascadetrain_on_data>, but reads the training data directly from a file.
@@ -1478,7 +1478,7 @@ procedure fann_cascadetrain_on_data(ann: pfann; Data: pfann_train_data; max_neur
 // unsigned int neurons_between_reports,
 // float desired_error);
 procedure fann_cascadetrain_on_file(ann: pfann; const Filename: PFANNChar; max_neurons: Cardinal; neurons_between_reports: Cardinal;
-  desired_error: Float); stdcall; external FANN_DLL_FILE name '_fann_cascadetrain_on_file@20';
+  desired_error: Float); stdcall; external FANN_DLL_FILE name 'fann_cascadetrain_on_file';// '_fann_cascadetrain_on_file@20';
 {$ENDIF}
 (* Group: Parameters *)
 
@@ -1506,7 +1506,7 @@ procedure fann_cascadetrain_on_file(ann: pfann; const Filename: PFANNChar; max_n
 *)
 // FANN_EXTERNAL float FANN_API fann_get_cascade_output_change_fraction(struct fann *ann);
 function fann_get_cascade_output_change_fraction(ann: pfann): Float; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_output_change_fraction@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_output_change_fraction';// '_fann_get_cascade_output_change_fraction@4';
 
 (* Function: fann_set_cascade_output_change_fraction
 
@@ -1520,7 +1520,7 @@ function fann_get_cascade_output_change_fraction(ann: pfann): Float; stdcall;
 // FANN_EXTERNAL void FANN_API fann_set_cascade_output_change_fraction(struct fann *ann,
 // float cascade_output_change_fraction);
 procedure fann_set_cascade_output_change_fraction(ann: pfann; cascade_output_change_fraction: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_output_change_fraction@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_output_change_fraction';// '_fann_set_cascade_output_change_fraction@8';
 
 (* Function: fann_get_cascade_output_stagnation_epochs
 
@@ -1538,7 +1538,7 @@ procedure fann_set_cascade_output_change_fraction(ann: pfann; cascade_output_cha
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_output_stagnation_epochs(struct fann *ann);
 function fann_get_cascade_output_stagnation_epochs(ann: pfann): Cardinal; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_output_stagnation_epochs@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_output_stagnation_epochs';// '_fann_get_cascade_output_stagnation_epochs@4';
 
 (* Function: fann_set_cascade_output_stagnation_epochs
 
@@ -1552,7 +1552,7 @@ function fann_get_cascade_output_stagnation_epochs(ann: pfann): Cardinal; stdcal
 // FANN_EXTERNAL void FANN_API fann_set_cascade_output_stagnation_epochs(struct fann *ann,
 // unsigned int cascade_output_stagnation_epochs);
 procedure fann_set_cascade_output_stagnation_epochs(ann: pfann; cascade_output_stagnation_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_output_stagnation_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_output_stagnation_epochs';// '_fann_set_cascade_output_stagnation_epochs@8';
 
 (* Function: fann_get_cascade_candidate_change_fraction
 
@@ -1578,7 +1578,7 @@ procedure fann_set_cascade_output_stagnation_epochs(ann: pfann; cascade_output_s
 *)
 // FANN_EXTERNAL float FANN_API fann_get_cascade_candidate_change_fraction(struct fann *ann);
 function fann_get_cascade_candidate_change_fraction(ann: pfann): Float; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_candidate_change_fraction@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_candidate_change_fraction';// '_fann_get_cascade_candidate_change_fraction@4';
 
 (* Function: fann_set_cascade_candidate_change_fraction
 
@@ -1592,7 +1592,7 @@ function fann_get_cascade_candidate_change_fraction(ann: pfann): Float; stdcall;
 // FANN_EXTERNAL void FANN_API fann_set_cascade_candidate_change_fraction(struct fann *ann,
 // float cascade_candidate_change_fraction);
 procedure fann_set_cascade_candidate_change_fraction(ann: pfann; cascade_candidate_change_fraction: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_candidate_change_fraction@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_candidate_change_fraction';// '_fann_set_cascade_candidate_change_fraction@8';
 
 (* Function: fann_get_cascade_candidate_stagnation_epochs
 
@@ -1610,7 +1610,7 @@ procedure fann_set_cascade_candidate_change_fraction(ann: pfann; cascade_candida
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_candidate_stagnation_epochs(struct fann *ann);
 function fann_get_cascade_candidate_stagnation_epochs(ann: pfann): Cardinal; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_candidate_stagnation_epochs@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_candidate_stagnation_epochs';// '_fann_get_cascade_candidate_stagnation_epochs@4';
 
 (* Function: fann_set_cascade_candidate_stagnation_epochs
 
@@ -1624,7 +1624,7 @@ function fann_get_cascade_candidate_stagnation_epochs(ann: pfann): Cardinal; std
 // FANN_EXTERNAL void FANN_API fann_set_cascade_candidate_stagnation_epochs(struct fann *ann,
 // unsigned int cascade_candidate_stagnation_epochs);
 procedure fann_set_cascade_candidate_stagnation_epochs(ann: pfann; cascade_candidate_stagnation_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_candidate_stagnation_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_candidate_stagnation_epochs';// '_fann_set_cascade_candidate_stagnation_epochs@8';
 
 (* Function: fann_get_cascade_weight_multiplier
 
@@ -1641,7 +1641,7 @@ procedure fann_set_cascade_candidate_stagnation_epochs(ann: pfann; cascade_candi
 *)
 // FANN_EXTERNAL fann_type FANN_API fann_get_cascade_weight_multiplier(struct fann *ann);
 function fann_get_cascade_weight_multiplier(ann: pfann): fann_type; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_weight_multiplier@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_weight_multiplier';// '_fann_get_cascade_weight_multiplier@4';
 
 (* Function: fann_set_cascade_weight_multiplier
 
@@ -1677,7 +1677,7 @@ procedure fann_set_cascade_weight_multiplier(ann: pfann; cascade_weight_multipli
 *)
 // FANN_EXTERNAL fann_type FANN_API fann_get_cascade_candidate_limit(struct fann *ann);
 function fann_get_cascade_candidate_limit(ann: pfann): fann_type; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_candidate_limit@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_candidate_limit';// '_fann_get_cascade_candidate_limit@4';
 
 (* Function: fann_set_cascade_candidate_limit
 
@@ -1692,7 +1692,7 @@ function fann_get_cascade_candidate_limit(ann: pfann): fann_type; stdcall;
 // fann_type cascade_candidate_limit);
 procedure fann_set_cascade_candidate_limit(ann: pfann; cascade_candidate_limit: fann_type); stdcall; external FANN_DLL_FILE name
 {$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_cascade_candidate_limit@12';
+  'fann_set_cascade_candidate_limit';//'_fann_set_cascade_candidate_limit@12';
 {$ELSE}
   '_fann_set_cascade_candidate_limit@8';
 {$ENDIF}
@@ -1709,7 +1709,7 @@ procedure fann_set_cascade_candidate_limit(ann: pfann; cascade_candidate_limit: 
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_max_out_epochs(struct fann *ann);
-function fann_get_cascade_max_out_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_cascade_max_out_epochs@4';
+function fann_get_cascade_max_out_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_cascade_max_out_epochs';// '_fann_get_cascade_max_out_epochs@4';
 
 (* Function: fann_set_cascade_max_out_epochs
 
@@ -1723,7 +1723,7 @@ function fann_get_cascade_max_out_epochs(ann: pfann): Cardinal; stdcall; externa
 // FANN_EXTERNAL void FANN_API fann_set_cascade_max_out_epochs(struct fann *ann,
 // unsigned int cascade_max_out_epochs);
 procedure fann_set_cascade_max_out_epochs(ann: pfann; cascade_max_out_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_max_out_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_max_out_epochs';// '_fann_set_cascade_max_out_epochs@8';
 
 (* Function: fann_get_cascade_min_out_epochs
 
@@ -1738,7 +1738,7 @@ procedure fann_set_cascade_max_out_epochs(ann: pfann; cascade_max_out_epochs: Ca
   This function appears in FANN >= 2.2.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_min_out_epochs(struct fann *ann);
-function fann_get_cascade_min_out_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_cascade_min_out_epochs@4';
+function fann_get_cascade_min_out_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_cascade_min_out_epochs';// '_fann_get_cascade_min_out_epochs@4';
 
 (* Function: fann_set_cascade_min_out_epochs
 
@@ -1752,7 +1752,7 @@ function fann_get_cascade_min_out_epochs(ann: pfann): Cardinal; stdcall; externa
 // FANN_EXTERNAL void FANN_API fann_set_cascade_min_out_epochs(struct fann *ann,
 // unsigned int cascade_min_out_epochs);
 procedure fann_set_cascade_min_out_epochs(ann: pfann; cascade_min_out_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_min_out_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_min_out_epochs';// '_fann_set_cascade_min_out_epochs@8';
 
 (* Function: fann_get_cascade_max_cand_epochs
 
@@ -1767,7 +1767,7 @@ procedure fann_set_cascade_min_out_epochs(ann: pfann; cascade_min_out_epochs: Ca
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_max_cand_epochs(struct fann *ann);
-function fann_get_cascade_max_cand_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_cascade_max_cand_epochs@4';
+function fann_get_cascade_max_cand_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_cascade_max_cand_epochs';// '_fann_get_cascade_max_cand_epochs@4';
 
 (* Function: fann_set_cascade_max_cand_epochs
 
@@ -1781,7 +1781,7 @@ function fann_get_cascade_max_cand_epochs(ann: pfann): Cardinal; stdcall; extern
 // FANN_EXTERNAL void FANN_API fann_set_cascade_max_cand_epochs(struct fann *ann,
 // unsigned int cascade_max_cand_epochs);
 procedure fann_set_cascade_max_cand_epochs(ann: pfann; cascade_max_cand_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_max_cand_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_max_cand_epochs';// '_fann_set_cascade_max_cand_epochs@8';
 
 (* Function: fann_get_cascade_min_cand_epochs
 
@@ -1796,7 +1796,7 @@ procedure fann_set_cascade_max_cand_epochs(ann: pfann; cascade_max_cand_epochs: 
   This function appears in FANN >= 2.2.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_min_cand_epochs(struct fann *ann);
-function fann_get_cascade_min_cand_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_cascade_min_cand_epochs@4';
+function fann_get_cascade_min_cand_epochs(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_cascade_min_cand_epochs';// '_fann_get_cascade_min_cand_epochs@4';
 
 (* Function: fann_set_cascade_min_cand_epochs
 
@@ -1810,7 +1810,7 @@ function fann_get_cascade_min_cand_epochs(ann: pfann): Cardinal; stdcall; extern
 // FANN_EXTERNAL void FANN_API fann_set_cascade_min_cand_epochs(struct fann *ann,
 // unsigned int cascade_min_cand_epochs);
 procedure fann_set_cascade_min_cand_epochs(ann: pfann; cascade_min_cand_epochs: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_min_cand_epochs@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_min_cand_epochs';// '_fann_set_cascade_min_cand_epochs@8';
 
 (* Function: fann_get_cascade_num_candidates
 
@@ -1836,7 +1836,7 @@ procedure fann_set_cascade_min_cand_epochs(ann: pfann; cascade_min_cand_epochs: 
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_num_candidates(struct fann *ann);
-function fann_get_cascade_num_candidates(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_cascade_num_candidates@4';
+function fann_get_cascade_num_candidates(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_cascade_num_candidates';// '_fann_get_cascade_num_candidates@4';
 
 (* Function: fann_get_cascade_activation_functions_count
 
@@ -1851,7 +1851,7 @@ function fann_get_cascade_num_candidates(ann: pfann): Cardinal; stdcall; externa
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_activation_functions_count(struct fann *ann);
 function fann_get_cascade_activation_functions_count(ann: pfann): Cardinal; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_activation_functions_count@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_activation_functions_count';// '_fann_get_cascade_activation_functions_count@4';
 
 (* Function: fann_get_cascade_activation_functions
 
@@ -1872,7 +1872,7 @@ function fann_get_cascade_activation_functions_count(ann: pfann): Cardinal; stdc
 // FANN_EXTERNAL enum fann_activationfunc_enum * FANN_API fann_get_cascade_activation_functions(
 // struct fann *ann);
 function fann_get_cascade_activation_functions(ann: pfann): pfann_activationfunc_enum; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_activation_functions@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_activation_functions';// '_fann_get_cascade_activation_functions@4';
 
 (* Function: fann_set_cascade_activation_functions
 
@@ -1893,7 +1893,7 @@ function fann_get_cascade_activation_functions(ann: pfann): pfann_activationfunc
 // unsigned int
 // cascade_activation_functions_count);
 procedure fann_set_cascade_activation_functions(ann: pfann; cascade_activation_functions: pfann_activationfunc_enum;
-  cascade_activation_functions_count: Cardinal); stdcall; external FANN_DLL_FILE name '_fann_set_cascade_activation_functions@12';
+  cascade_activation_functions_count: Cardinal); stdcall; external FANN_DLL_FILE name 'fann_set_cascade_activation_functions';// '_fann_set_cascade_activation_functions@12';
 
 (* Function: fann_get_cascade_activation_steepnesses_count
 
@@ -1908,7 +1908,7 @@ procedure fann_set_cascade_activation_functions(ann: pfann; cascade_activation_f
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_activation_steepnesses_count(struct fann *ann);
 function fann_get_cascade_activation_steepnesses_count(ann: pfann): Cardinal; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_activation_steepnesses_count@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_activation_steepnesses_count';// '_fann_get_cascade_activation_steepnesses_count@4';
 
 (* Function: fann_get_cascade_activation_steepnesses
 
@@ -1927,7 +1927,7 @@ function fann_get_cascade_activation_steepnesses_count(ann: pfann): Cardinal; st
 *)
 // FANN_EXTERNAL fann_type * FANN_API fann_get_cascade_activation_steepnesses(struct fann *ann);
 function fann_get_cascade_activation_steepnesses(ann: pfann): pfann_type; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_activation_steepnesses@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_activation_steepnesses';// '_fann_get_cascade_activation_steepnesses@4';
 
 (* Function: fann_set_cascade_activation_steepnesses
 
@@ -1948,7 +1948,7 @@ function fann_get_cascade_activation_steepnesses(ann: pfann): pfann_type; stdcal
 // unsigned int
 // cascade_activation_steepnesses_count);
 procedure fann_set_cascade_activation_steepnesses(ann: pfann; cascade_activation_steepnesses: pfann_type;
-  cascade_activation_steepnesses_count: Cardinal); stdcall; external FANN_DLL_FILE name '_fann_set_cascade_activation_steepnesses@12';
+  cascade_activation_steepnesses_count: Cardinal); stdcall; external FANN_DLL_FILE name 'fann_set_cascade_activation_steepnesses';// '_fann_set_cascade_activation_steepnesses@12';
 
 (* Function: fann_get_cascade_num_candidate_groups
 
@@ -1969,7 +1969,7 @@ procedure fann_set_cascade_activation_steepnesses(ann: pfann; cascade_activation
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_cascade_num_candidate_groups(struct fann *ann);
 function fann_get_cascade_num_candidate_groups(ann: pfann): Cardinal; stdcall;
-  external FANN_DLL_FILE name '_fann_get_cascade_num_candidate_groups@4';
+  external FANN_DLL_FILE name 'fann_get_cascade_num_candidate_groups';// '_fann_get_cascade_num_candidate_groups@4';
 
 (* Function: fann_set_cascade_num_candidate_groups
 
@@ -1983,7 +1983,7 @@ function fann_get_cascade_num_candidate_groups(ann: pfann): Cardinal; stdcall;
 // FANN_EXTERNAL void FANN_API fann_set_cascade_num_candidate_groups(struct fann *ann,
 // unsigned int cascade_num_candidate_groups);
 procedure fann_set_cascade_num_candidate_groups(ann: pfann; cascade_num_candidate_groups: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_cascade_num_candidate_groups@8';
+  external FANN_DLL_FILE name 'fann_set_cascade_num_candidate_groups';// '_fann_set_cascade_num_candidate_groups@8';
 
 // ---------------------------- fann.pas -------------------------
 
@@ -2049,7 +2049,7 @@ function fann_create_standard(num_layers: Cardinal): pfann; cdecl; varargs; exte
 // FANN_EXTERNAL struct fann *FANN_API fann_create_standard_array(unsigned int num_layers,
 // const unsigned int *layers);
 function fann_create_standard_array(num_layers: Cardinal; const layers: PCardinal): pfann; stdcall;
-  external FANN_DLL_FILE name '_fann_create_standard_array@8';
+  external FANN_DLL_FILE name 'fann_create_standard_array';// '_fann_create_standard_array@8';
 
 (* Function: fann_create_sparse
 
@@ -2092,7 +2092,7 @@ function fann_create_sparse(connection_rate: Float; num_layers: Cardinal): pfann
 // unsigned int num_layers,
 // const unsigned int *layers);
 function fann_create_sparse_array(connection_rate: Float; num_layers: Cardinal; const layers: PCardinal): pfann; stdcall;
-  external FANN_DLL_FILE name '_fann_create_sparse_array@12';
+  external FANN_DLL_FILE name 'fann_create_sparse_array';// '_fann_create_sparse_array@12';
 (* Function: fann_create_shortcut
 
   Creates a standard backpropagation neural network, which is not fully connected and which
@@ -2126,7 +2126,7 @@ function fann_create_shortcut(num_layers: Cardinal): pfann; cdecl; varargs; exte
 // FANN_EXTERNAL struct fann *FANN_API fann_create_shortcut_array(unsigned int num_layers,
 // const unsigned int *layers);
 function fann_create_shortcut_array(num_layers: Cardinal; const layers: PCardinal): pfann; stdcall;
-  external FANN_DLL_FILE name '_fann_create_shortcut_array@8';
+  external FANN_DLL_FILE name 'fann_create_shortcut_array';// '_fann_create_shortcut_array@8';
 
 (* Function: fann_destroy
   Destroys the entire network and properly freeing all the associated memmory.
@@ -2134,7 +2134,7 @@ function fann_create_shortcut_array(num_layers: Cardinal; const layers: PCardina
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_destroy(struct fann *ann);
-procedure fann_destroy(ann: pfann); stdcall; external FANN_DLL_FILE name '_fann_destroy@4';
+procedure fann_destroy(ann: pfann); stdcall; external FANN_DLL_FILE name 'fann_destroy';// '_fann_destroy@4';
 
 (* Function: fann_copy
   Creates a copy of a fann structure.
@@ -2144,7 +2144,7 @@ procedure fann_destroy(ann: pfann); stdcall; external FANN_DLL_FILE name '_fann_
   This function appears in FANN >= 2.2.0.
 *)
 // FANN_EXTERNAL struct fann * FANN_API fann_copy(struct fann *ann);
-function fann_copy(ann: pfann): pfann; stdcall; external FANN_DLL_FILE name '_fann_copy@4';
+function fann_copy(ann: pfann): pfann; stdcall; external FANN_DLL_FILE name 'fann_copy';// '_fann_copy@4';
 
 (* Function: fann_run
   Will run input through the neural network, returning an array of outputs, the number of which being
@@ -2156,7 +2156,7 @@ function fann_copy(ann: pfann): pfann; stdcall; external FANN_DLL_FILE name '_fa
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL fann_type * FANN_API fann_run(struct fann *ann, fann_type * input);
-function fann_run(ann: pfann; input: pfann_type): pfann_type_array; stdcall; external FANN_DLL_FILE name '_fann_run@8';
+function fann_run(ann: pfann; input: pfann_type): pfann_type_array; stdcall; external FANN_DLL_FILE name 'fann_run';// '_fann_run@8';
 
 (* Function: fann_randomize_weights
   Give each connection a random weight between *min_weight* and *max_weight*
@@ -2171,7 +2171,7 @@ function fann_run(ann: pfann; input: pfann_type): pfann_type_array; stdcall; ext
 // FANN_EXTERNAL void FANN_API fann_randomize_weights(struct fann *ann, fann_type min_weight,
 // fann_type max_weight);
 procedure fann_randomize_weights(ann: pfann; min_weight: fann_type; max_weight: fann_type); stdcall;
-  external FANN_DLL_FILE name '_fann_randomize_weights@12';
+  external FANN_DLL_FILE name 'fann_randomize_weights';// '_fann_randomize_weights@12';
 
 (* Function: fann_init_weights
   Initialize the weights using Widrow + Nguyen's algorithm.
@@ -2191,7 +2191,7 @@ procedure fann_randomize_weights(ann: pfann; min_weight: fann_type; max_weight: 
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_init_weights(struct fann *ann, struct fann_train_data *train_data);
-procedure fann_init_weights(ann: pfann; train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name '_fann_init_weights@8';
+procedure fann_init_weights(ann: pfann; train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name 'fann_init_weights';// '_fann_init_weights@8';
 
 (* Function: fann_print_connections
   Will print the connections of the ann in a compact matrix, for easy viewing of the internals
@@ -2219,7 +2219,7 @@ procedure fann_init_weights(ann: pfann; train_data: pfann_train_data); stdcall; 
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_print_connections(struct fann *ann);
-procedure fann_print_connections(ann: pfann); stdcall; external FANN_DLL_FILE name '_fann_print_connections@4';
+procedure fann_print_connections(ann: pfann); stdcall; external FANN_DLL_FILE name 'fann_print_connections';// '_fann_print_connections@4';
 
 (* Group: Parameters *)
 (* Function: fann_print_parameters
@@ -2229,7 +2229,7 @@ procedure fann_print_connections(ann: pfann); stdcall; external FANN_DLL_FILE na
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_print_parameters(struct fann *ann);
-procedure fann_print_parameters(ann: pfann); stdcall; external FANN_DLL_FILE name '_fann_print_parameters@4';
+procedure fann_print_parameters(ann: pfann); stdcall; external FANN_DLL_FILE name 'fann_print_parameters';// '_fann_print_parameters@4';
 
 (* Function: fann_get_num_input
 
@@ -2238,7 +2238,7 @@ procedure fann_print_parameters(ann: pfann); stdcall; external FANN_DLL_FILE nam
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_num_input(struct fann *ann);
-function fann_get_num_input(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_num_input@4';
+function fann_get_num_input(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_num_input';// '_fann_get_num_input@4';
 
 (* Function: fann_get_num_output
 
@@ -2247,7 +2247,7 @@ function fann_get_num_input(ann: pfann): Cardinal; stdcall; external FANN_DLL_FI
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_num_output(struct fann *ann);
-function fann_get_num_output(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_num_output@4';
+function fann_get_num_output(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_num_output';// '_fann_get_num_output@4';
 
 (* Function: fann_get_total_neurons
 
@@ -2257,7 +2257,7 @@ function fann_get_num_output(ann: pfann): Cardinal; stdcall; external FANN_DLL_F
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_total_neurons(struct fann *ann);
-function fann_get_total_neurons(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_total_neurons@4';
+function fann_get_total_neurons(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_total_neurons';// '_fann_get_total_neurons@4';
 
 (* Function: fann_get_total_connections
 
@@ -2266,7 +2266,7 @@ function fann_get_total_neurons(ann: pfann): Cardinal; stdcall; external FANN_DL
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_total_connections(struct fann *ann);
-function fann_get_total_connections(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_total_connections@4';
+function fann_get_total_connections(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_total_connections';// '_fann_get_total_connections@4';
 
 (* Function: fann_get_network_type
 
@@ -2285,7 +2285,7 @@ function fann_get_total_connections(ann: pfann): Cardinal; stdcall; external FAN
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL enum fann_nettype_enum FANN_API fann_get_network_type(struct fann *ann);
-function fann_get_network_type(ann: pfann): Tfann_nettype_enum; stdcall; external FANN_DLL_FILE name '_fann_get_network_type@4';
+function fann_get_network_type(ann: pfann): Tfann_nettype_enum; stdcall; external FANN_DLL_FILE name 'fann_get_network_type';// '_fann_get_network_type@4';
 
 (* Function: fann_get_connection_rate
 
@@ -2301,7 +2301,7 @@ function fann_get_network_type(ann: pfann): Tfann_nettype_enum; stdcall; externa
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL float FANN_API fann_get_connection_rate(struct fann *ann);
-function fann_get_connection_rate(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_connection_rate@4';
+function fann_get_connection_rate(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_connection_rate';// '_fann_get_connection_rate@4';
 
 (* Function: fann_get_num_layers
 
@@ -2322,7 +2322,7 @@ function fann_get_connection_rate(ann: pfann): Float; stdcall; external FANN_DLL
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_num_layers(struct fann *ann);
-function fann_get_num_layers(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_num_layers@4';
+function fann_get_num_layers(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_num_layers';// '_fann_get_num_layers@4';
 
 (* Function: fann_get_layer_array
 
@@ -2340,7 +2340,7 @@ function fann_get_num_layers(ann: pfann): Cardinal; stdcall; external FANN_DLL_F
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_get_layer_array(struct fann *ann, unsigned int *layers);
-procedure fann_get_layer_array(ann: pfann; layers: PCardinal); stdcall; external FANN_DLL_FILE name '_fann_get_layer_array@8';
+procedure fann_get_layer_array(ann: pfann; layers: PCardinal); stdcall; external FANN_DLL_FILE name 'fann_get_layer_array';// '_fann_get_layer_array@8';
 
 (* Function: fann_get_bias_array
 
@@ -2356,7 +2356,7 @@ procedure fann_get_layer_array(ann: pfann; layers: PCardinal); stdcall; external
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_get_bias_array(struct fann *ann, unsigned int *bias);
-procedure fann_get_bias_array(ann: pfann; bias: PCardinal); stdcall; external FANN_DLL_FILE name '_fann_get_bias_array@8';
+procedure fann_get_bias_array(ann: pfann; bias: PCardinal); stdcall; external FANN_DLL_FILE name 'fann_get_bias_array';// '_fann_get_bias_array@8';
 
 (* Function: fann_get_connection_array
 
@@ -2374,7 +2374,7 @@ procedure fann_get_bias_array(ann: pfann; bias: PCardinal); stdcall; external FA
 // FANN_EXTERNAL void FANN_API fann_get_connection_array(struct fann *ann,
 // struct fann_connection *connections);
 procedure fann_get_connection_array(ann: pfann; connections: pfann_connection); stdcall;
-  external FANN_DLL_FILE name '_fann_get_connection_array@8';
+  external FANN_DLL_FILE name 'fann_get_connection_array';// '_fann_get_connection_array@8';
 
 (* Function: fann_set_weight_array
 
@@ -2394,7 +2394,7 @@ procedure fann_get_connection_array(ann: pfann; connections: pfann_connection); 
 // FANN_EXTERNAL void FANN_API fann_set_weight_array(struct fann *ann,
 // struct fann_connection *connections, unsigned int num_connections);
 procedure fann_set_weight_array(ann: pfann; connections: pfann_connection; num_connection: Cardinal); stdcall;
-  external FANN_DLL_FILE name '_fann_set_weight_array@12';
+  external FANN_DLL_FILE name 'fann_set_weight_array';// '_fann_set_weight_array@12';
 
 (* Function: fann_set_weight
 
@@ -2412,11 +2412,11 @@ procedure fann_set_weight_array(ann: pfann; connections: pfann_connection; num_c
 // FANN_EXTERNAL void FANN_API fann_set_weight(struct fann *ann,
 // unsigned int from_neuron, unsigned int to_neuron, fann_type weight);
 procedure fann_set_weight(ann: pfann; from_neuron: Cardinal; to_neuron: Cardinal; weight: fann_type); stdcall; external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_weight@20';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_weight';//'_fann_set_weight@20';
 {$ELSE}
-  '_fann_set_weight@16';
-{$ENDIF}
+  'fann_set_weight';//'_fann_set_weight@16'; 
+{$ENDIF}//name ''
 (* Function: fann_set_user_data
 
   Store a pointer to user defined data. The pointer can be
@@ -2432,7 +2432,7 @@ procedure fann_set_weight(ann: pfann; from_neuron: Cardinal; to_neuron: Cardinal
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_set_user_data(struct fann *ann, void *user_data);
-procedure fann_set_user_data(ann: pfann; user_data: Pointer); stdcall; external FANN_DLL_FILE name '_fann_set_user_data@8';
+procedure fann_set_user_data(ann: pfann; user_data: Pointer); stdcall; external FANN_DLL_FILE name 'fann_set_user_data';// '_fann_set_user_data@8';
 
 (* Function: fann_get_user_data
 
@@ -2450,7 +2450,7 @@ procedure fann_set_user_data(ann: pfann; user_data: Pointer); stdcall; external 
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void * FANN_API fann_get_user_data(struct fann *ann);
-function fann_get_user_data(ann: pfann): Pointer; stdcall; external FANN_DLL_FILE name '_fann_get_user_data@4';
+function fann_get_user_data(ann: pfann): Pointer; stdcall; external FANN_DLL_FILE name 'fann_get_user_data';// '_fann_get_user_data@4';
 
 {$IFDEF FIXEDFANN}
 (* Function: fann_get_decimal_point
@@ -2467,7 +2467,7 @@ function fann_get_user_data(ann: pfann): Pointer; stdcall; external FANN_DLL_FIL
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_decimal_point(struct fann *ann);
-function fann_get_decimal_point(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_decimal_point@4';
+function fann_get_decimal_point(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_decimal_point';// '_fann_get_decimal_point@4';
 
 (* Function: fann_get_multiplier
 
@@ -2487,7 +2487,7 @@ function fann_get_decimal_point(ann: pfann): Cardinal; stdcall; external FANN_DL
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_multiplier(struct fann *ann);
-function fann_get_multiplier(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_multiplier@4';
+function fann_get_multiplier(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_multiplier';// '_fann_get_multiplier@4';
 
 {$ENDIF}	(* FIXEDFANN *)
 // ----------------------------- fann_trainc.pas --------------------------
@@ -2532,7 +2532,7 @@ function fann_get_multiplier(ann: pfann): Cardinal; stdcall; external FANN_DLL_F
 *)
 // FANN_EXTERNAL void FANN_API fann_train(struct fann *ann, fann_type * input,
 // fann_type * desired_output);
-procedure fann_train(ann: pfann; input: pfann_type; Desired_Output: pfann_type); stdcall; external FANN_DLL_FILE name '_fann_train@12';
+procedure fann_train(ann: pfann; input: pfann_type; Desired_Output: pfann_type); stdcall; external FANN_DLL_FILE name 'fann_train';//'_fann_train@12';
 
 {$ENDIF}	(* NOT FIXEDFANN *)
 (* Function: fann_test
@@ -2548,7 +2548,7 @@ procedure fann_train(ann: pfann; input: pfann_type; Desired_Output: pfann_type);
 // FANN_EXTERNAL fann_type * FANN_API fann_test(struct fann *ann, fann_type * input,
 // fann_type * desired_output);
 function fann_test(ann: pfann; input: pfann_type; Desired_Output: pfann_type): pfann_type_array; stdcall;
-  external FANN_DLL_FILE name '_fann_test@12';
+  external FANN_DLL_FILE name 'fann_test';//'_fann_test@12';
 
 (* Function: fann_get_MSE
   Reads the mean square error from the network.
@@ -2563,7 +2563,7 @@ function fann_test(ann: pfann; input: pfann_type; Desired_Output: pfann_type): p
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_MSE(struct fann *ann);
-function fann_get_MSE(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_MSE@4';
+function fann_get_MSE(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_MSE';//'_fann_get_MSE@4';
 
 (* Function: fann_get_bit_fail
 
@@ -2581,7 +2581,7 @@ function fann_get_MSE(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '
   This function appears in FANN >= 2.0.0
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_get_bit_fail(struct fann *ann);
-function fann_get_bit_fail(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_get_bit_fail@4';
+function fann_get_bit_fail(ann: pfann): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_get_bit_fail'; //'_fann_get_bit_fail@4';
 
 (* Function: fann_reset_MSE
   Resets the mean square error from the network.
@@ -2594,7 +2594,7 @@ function fann_get_bit_fail(ann: pfann): Cardinal; stdcall; external FANN_DLL_FIL
   This function appears in FANN >= 1.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_reset_MSE(struct fann *ann);
-procedure fann_reset_MSE(ann: pfann); stdcall; external FANN_DLL_FILE name '_fann_reset_MSE@4';
+procedure fann_reset_MSE(ann: pfann); stdcall; external FANN_DLL_FILE name 'fann_reset_MSE';//'_fann_reset_MSE@4';
 
 (* Group: Training Data Training *)
 
@@ -2628,7 +2628,7 @@ procedure fann_reset_MSE(ann: pfann); stdcall; external FANN_DLL_FILE name '_fan
 // unsigned int epochs_between_reports,
 // float desired_error);
 procedure fann_train_on_data(ann: pfann; Data: pfann_train_data; max_epochs: Cardinal; epochs_between_reports: Cardinal;
-  desired_error: Float); stdcall; external FANN_DLL_FILE name '_fann_train_on_data@20';
+  desired_error: Float); stdcall; external FANN_DLL_FILE name 'fann_train_on_data';//'_fann_train_on_data@20';
 
 (* Function: fann_train_on_file
 
@@ -2644,7 +2644,7 @@ procedure fann_train_on_data(ann: pfann; Data: pfann_train_data; max_epochs: Car
 // unsigned int epochs_between_reports,
 // float desired_error);
 procedure fann_train_on_file(ann: pfann; Filename: PFANNChar; max_epochs: Cardinal; epochs_between_reports: Cardinal; desired_error: Float);
-  stdcall; external FANN_DLL_FILE name '_fann_train_on_file@20';
+  stdcall; external FANN_DLL_FILE name 'fann_train_on_file';//_fann_train_on_file@20';
 
 (* Function: fann_train_epoch
   Train one epoch with a set of training data.
@@ -2666,7 +2666,7 @@ procedure fann_train_on_file(ann: pfann; Filename: PFANNChar; max_epochs: Cardin
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_train_epoch(struct fann *ann, struct fann_train_data *data);
-function fann_train_epoch(ann: pfann; Data: pfann_train_data): Float; stdcall; external FANN_DLL_FILE name '_fann_train_epoch@8';
+function fann_train_epoch(ann: pfann; Data: pfann_train_data): Float; stdcall; external FANN_DLL_FILE name 'fann_train_epoch';// '_fann_train_epoch@8';
 {$ENDIF}	(* NOT FIXEDFANN *)
 (* Function: fann_test_data
 
@@ -2680,7 +2680,7 @@ function fann_train_epoch(ann: pfann; Data: pfann_train_data): Float; stdcall; e
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_test_data(struct fann *ann, struct fann_train_data *data);
-function fann_test_data(ann: pfann; Data: pfann_train_data): Float; stdcall; external FANN_DLL_FILE name '_fann_test_data@8';
+function fann_test_data(ann: pfann; Data: pfann_train_data): Float; stdcall; external FANN_DLL_FILE name 'fann_test_data';//_fann_test_data@8';
 
 (* Group: Training Data Manipulation *)
 
@@ -2706,7 +2706,7 @@ function fann_test_data(ann: pfann; Data: pfann_train_data): Float; stdcall; ext
 *)
 // FANN_EXTERNAL struct fann_train_data *FANN_API fann_read_train_from_file(const char *filename);
 function fann_read_train_from_file(const Filename: PFANNChar): pfann_train_data; stdcall;
-  external FANN_DLL_FILE name '_fann_read_train_from_file@4';
+  external FANN_DLL_FILE name 'fann_read_train_from_file';//'_fann_read_train_from_file@4';
 
 (* Function: fann_create_train
   Creates an empty training data struct.
@@ -2719,7 +2719,7 @@ function fann_read_train_from_file(const Filename: PFANNChar): pfann_train_data;
 *)
 // FANN_EXTERNAL struct fann_train_data * FANN_API fann_create_train(unsigned int num_data, unsigned int num_input, unsigned int num_output);
 function fann_create_train(num_data: Cardinal; num_input: Cardinal; num_output: Cardinal): pfann_train_data; stdcall;
-  external FANN_DLL_FILE name '_fann_create_train@12';
+  external FANN_DLL_FILE name 'fann_create_train';//'_fann_create_train@12';
 
 (* Function: fann_create_train_from_callback
   Creates the training data struct from a user supplied function.
@@ -2759,7 +2759,7 @@ Type
   // fann_type * ,
   // fann_type * ));
 function fann_create_train_from_callback(num_data: Cardinal; num_input: Cardinal; num_output: Cardinal; user_function: TUser_Function)
-  : pfann_train_data; stdcall; external FANN_DLL_FILE name '_fann_create_train_from_callback@16';
+  : pfann_train_data; stdcall; external FANN_DLL_FILE name 'fann_create_train_from_callback';// '_fann_create_train_from_callback@16';
 
 (* Function: fann_destroy_train
   Destructs the training data and properly deallocates all of the associated data.
@@ -2768,7 +2768,7 @@ function fann_create_train_from_callback(num_data: Cardinal; num_input: Cardinal
   This function appears in FANN >= 1.0.0
 *)
 // FANN_EXTERNAL void FANN_API fann_destroy_train(struct fann_train_data *train_data);
-procedure fann_destroy_train(train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name '_fann_destroy_train@4';
+procedure fann_destroy_train(train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name 'fann_destroy_train';// '_fann_destroy_train@4';
 
 (* Function: fann_shuffle_train_data
 
@@ -2778,7 +2778,7 @@ procedure fann_destroy_train(train_data: pfann_train_data); stdcall; external FA
   This function appears in FANN >= 1.1.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_shuffle_train_data(struct fann_train_data *train_data);
-procedure fann_shuffle_train_data(train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name '_fann_shuffle_train_data@4';
+procedure fann_shuffle_train_data(train_data: pfann_train_data); stdcall; external FANN_DLL_FILE name 'fann_shuffle_train_data';// '_fann_shuffle_train_data@4';
 
 {$IFNDEF FIXEDFANN}
 (* Function: fann_scale_train
@@ -2795,7 +2795,7 @@ procedure fann_shuffle_train_data(train_data: pfann_train_data); stdcall; extern
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_scale_train( struct fann *ann, struct fann_train_data *data );
-procedure fann_scale_train(ann: pfann; Data: pfann_train_data); stdcall; external FANN_DLL_FILE name '_fann_scale_train@8';
+procedure fann_scale_train(ann: pfann; Data: pfann_train_data); stdcall; external FANN_DLL_FILE name 'fann_scale_train';// '_fann_scale_train@8';
 
 (* Function: fann_descale_train
 
@@ -2811,7 +2811,7 @@ procedure fann_scale_train(ann: pfann; Data: pfann_train_data); stdcall; externa
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_descale_train( struct fann *ann, struct fann_train_data *data );
-procedure fann_descale_train(ann: pfann; Data: pfann_train_data); stdcall; external FANN_DLL_FILE name '_fann_descale_train@8';
+procedure fann_descale_train(ann: pfann; Data: pfann_train_data); stdcall; external FANN_DLL_FILE name 'fann_descale_train';// '_fann_descale_train@8';
 
 (* Function: fann_set_input_scaling_params
 
@@ -2834,7 +2834,7 @@ procedure fann_descale_train(ann: pfann; Data: pfann_train_data); stdcall; exter
 // float new_input_min,
 // float new_input_max);
 function fann_set_input_scaling_params(ann: pfann; const Data: pfann_train_data; new_input_min: Float; new_input_max: Float): integer;
-  stdcall; external FANN_DLL_FILE name '_fann_set_input_scaling_params@16';
+  stdcall; external FANN_DLL_FILE name 'fann_set_input_scaling_params';// '_fann_set_input_scaling_params@16';
 
 (* Function: fann_set_output_scaling_params
 
@@ -2857,7 +2857,7 @@ function fann_set_input_scaling_params(ann: pfann; const Data: pfann_train_data;
 // float new_output_min,
 // float new_output_max);
 function fann_set_output_scaling_params(ann: pfann; const Data: pfann_train_data; new_output_min: Float; new_output_max: Float): integer;
-  stdcall; external FANN_DLL_FILE name '_fann_set_output_scaling_params@16';
+  stdcall; external FANN_DLL_FILE name 'fann_set_output_scaling_params';// '_fann_set_output_scaling_params@16';
 
 (* Function: fann_set_scaling_params
 
@@ -2884,7 +2884,7 @@ function fann_set_output_scaling_params(ann: pfann; const Data: pfann_train_data
 // float new_output_min,
 // float new_output_max);
 function fann_set_scaling_params(ann: pfann; const Data: pfann_train_data; new_input_min: Float; new_input_max: Float;
-  new_output_min: Float; new_output_max: Float): integer; stdcall; external FANN_DLL_FILE name '_fann_set_scaling_params@24';
+  new_output_min: Float; new_output_max: Float): integer; stdcall; external FANN_DLL_FILE name 'fann_set_scaling_params';// '_fann_set_scaling_params@24';
 
 (* Function: fann_clear_scaling_params
 
@@ -2896,7 +2896,7 @@ function fann_set_scaling_params(ann: pfann; const Data: pfann_train_data; new_i
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL int FANN_API fann_clear_scaling_params(struct fann *ann);
-function fann_clear_scaling_params(ann: pfann): integer; stdcall; external FANN_DLL_FILE name '_fann_clear_scaling_params@4';
+function fann_clear_scaling_params(ann: pfann): integer; stdcall; external FANN_DLL_FILE name 'fann_clear_scaling_params';// '_fann_clear_scaling_params@4';
 
 (* Function: fann_scale_input
 
@@ -2913,11 +2913,11 @@ function fann_clear_scaling_params(ann: pfann): integer; stdcall; external FANN_
 *)
 // FANN_EXTERNAL void FANN_API fann_scale_input( struct fann *ann, fann_type *input_vector );
 procedure fann_scale_input(ann: pfann; input_vector: pfann_type); stdcall; external FANN_DLL_FILE name
-{$IF Defined(FIXEDFANN)}
-  '_fann_scale_input_train_data@12';
+{$IF Defined(FIXEDFANN)} 
+  'fann_scale_input_train_data'; //'_fann_scale_input_train_data@12';
 {$ELSE}
-  '_fann_scale_input@8';
-{$ENDIF}
+  'fann_scale_input'; //'_fann_scale_input@8';
+{$ENDIF}// name ''
 (* Function: fann_scale_output
 
   Scale data in output vector before feed it to ann based on previously calculated parameters.
@@ -2933,11 +2933,11 @@ procedure fann_scale_input(ann: pfann; input_vector: pfann_type); stdcall; exter
 *)
 // FANN_EXTERNAL void FANN_API fann_scale_output( struct fann *ann, fann_type *output_vector );
 procedure fann_scale_output(ann: pfann; output_vector: pfann_type); stdcall; external FANN_DLL_FILE name
-{$IF Defined(FIXEDFANN)}
-  '_fann_scale_output@12';
+{$IF Defined(FIXEDFANN)} 
+  'fann_scale_output';//'_fann_scale_output@12';
 {$ELSE}
   '_fann_scale_output@8';
-{$ENDIF}
+{$ENDIF}//name ''
 (* Function: fann_descale_input
 
   Scale data in input vector after get it from ann based on previously calculated parameters.
@@ -2952,7 +2952,7 @@ procedure fann_scale_output(ann: pfann; output_vector: pfann_type); stdcall; ext
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_descale_input( struct fann *ann, fann_type *input_vector );
-procedure fann_descale_input(ann: pfann; input_vector: pfann_type); stdcall; external FANN_DLL_FILE name '_fann_descale_input@8';
+procedure fann_descale_input(ann: pfann; input_vector: pfann_type); stdcall; external FANN_DLL_FILE name 'fann_descale_input';// '_fann_descale_input@8';
 
 (* Function: fann_descale_output
 
@@ -2968,7 +2968,7 @@ procedure fann_descale_input(ann: pfann; input_vector: pfann_type); stdcall; ext
   This function appears in FANN >= 2.1.0
 *)
 // FANN_EXTERNAL void FANN_API fann_descale_output( struct fann *ann, fann_type *output_vector );
-procedure fann_descale_output(ann: pfann; output_vector: pfann_type); stdcall; external FANN_DLL_FILE name '_fann_descale_input@8';
+procedure fann_descale_output(ann: pfann; output_vector: pfann_type); stdcall; external FANN_DLL_FILE name 'fann_descale_input';// '_fann_descale_input@8';
 
 {$ENDIF}
 (* Function: fann_scale_input_train_data
@@ -2983,7 +2983,7 @@ procedure fann_descale_output(ann: pfann; output_vector: pfann_type); stdcall; e
 // FANN_EXTERNAL void FANN_API fann_scale_input_train_data(struct fann_train_data *train_data,
 // fann_type new_min, fann_type new_max);
 procedure fann_scale_input_train_data(train_data: pfann_train_data; new_min: fann_type; new_max: fann_type); stdcall;
-  external FANN_DLL_FILE name '_fann_descale_output@8';
+  external FANN_DLL_FILE name 'fann_descale_output';// '_fann_descale_output@8';
 
 (* Function: fann_scale_output_train_data
 
@@ -3016,10 +3016,10 @@ procedure fann_scale_output_train_data(train_data: pfann_train_data; new_min: fa
 // fann_type new_min, fann_type new_max);
 procedure fann_scale_train_data(train_data: pfann_train_data; new_min: fann_type; new_max: fann_type); stdcall; external FANN_DLL_FILE name
 {$IFDEF Defined(DOUBLEFANN)}
-  '_fann_scale_train_data@20';
+  'fann_scale_train_data';//'_fann_scale_train_data@20';
 {$ELSE}
-  '_fann_scale_train_data@12';
-{$ENDIF}
+  'fann_scale_train_data';//'_fann_scale_train_data@12';
+{$ENDIF} // name ''
 (* Function: fann_merge_train_data
 
   Merges the data from *data1* and *data2* into a new <struct fann_train_data>.
@@ -3029,7 +3029,7 @@ procedure fann_scale_train_data(train_data: pfann_train_data; new_min: fann_type
 // FANN_EXTERNAL struct fann_train_data *FANN_API fann_merge_train_data(struct fann_train_data *data1,
 // struct fann_train_data *data2);
 function fann_merge_train_data(Data1: pfann_train_data; Data2: pfann_train_data): pfann_train_data; stdcall;
-  external FANN_DLL_FILE name '_fann_merge_train_data@8';
+  external FANN_DLL_FILE name 'fann_merge_train_data';// '_fann_merge_train_data@8';
 
 (* Function: fann_duplicate_train_data
 
@@ -3040,7 +3040,7 @@ function fann_merge_train_data(Data1: pfann_train_data; Data2: pfann_train_data)
 // FANN_EXTERNAL struct fann_train_data *FANN_API fann_duplicate_train_data(struct fann_train_data
 // *data);
 function fann_duplicate_train_data(Data: pfann_train_data): pfann_train_data; stdcall;
-  external FANN_DLL_FILE name '_fann_duplicate_train_data@4';
+  external FANN_DLL_FILE name 'fann_duplicate_train_data';// '_fann_duplicate_train_data@4';
 
 (* Function: fann_subset_train_data
 
@@ -3060,7 +3060,7 @@ function fann_duplicate_train_data(Data: pfann_train_data): pfann_train_data; st
 // *data, unsigned int pos,
 // unsigned int length);
 function fann_subset_train_data(Data: pfann_train_data; pos: Cardinal; length: Cardinal): pfann_train_data; stdcall;
-  external FANN_DLL_FILE name '_fann_subset_train_data@12';
+  external FANN_DLL_FILE name 'fann_subset_train_data';// '_fann_subset_train_data@12';
 
 (* Function: fann_length_train_data
 
@@ -3069,7 +3069,7 @@ function fann_subset_train_data(Data: pfann_train_data; pos: Cardinal; length: C
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_length_train_data(struct fann_train_data *data);
-function fann_length_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_length_train_data@4';
+function fann_length_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_length_train_data';// '_fann_length_train_data@4';
 
 (* Function: fann_num_input_train_data
 
@@ -3081,7 +3081,7 @@ function fann_length_train_data(Data: pfann_train_data): Cardinal; stdcall; exte
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_num_input_train_data(struct fann_train_data *data);
-function fann_num_input_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_num_input_train_data@4';
+function fann_num_input_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_num_input_train_data';// '_fann_num_input_train_data@4';
 
 (* Function: fann_num_output_train_data
 
@@ -3093,7 +3093,7 @@ function fann_num_input_train_data(Data: pfann_train_data): Cardinal; stdcall; e
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL unsigned int FANN_API fann_num_output_train_data(struct fann_train_data *data);
-function fann_num_output_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name '_fann_num_output_train_data@4';
+function fann_num_output_train_data(Data: pfann_train_data): Cardinal; stdcall; external FANN_DLL_FILE name 'fann_num_output_train_data';// '_fann_num_output_train_data@4';
 
 (* Function: fann_save_train
 
@@ -3109,7 +3109,7 @@ function fann_num_output_train_data(Data: pfann_train_data): Cardinal; stdcall; 
 *)
 // FANN_EXTERNAL int FANN_API fann_save_train(struct fann_train_data *data, const char *filename);
 function fann_save_train(Data: pfann_train_data; const Filename: PFANNChar): integer; stdcall;
-  external FANN_DLL_FILE name '_fann_save_train@8';
+  external FANN_DLL_FILE name 'fann_save_train';// '_fann_save_train@8';
 
 (* Function: fann_save_train_to_fixed
 
@@ -3128,7 +3128,7 @@ function fann_save_train(Data: pfann_train_data; const Filename: PFANNChar): int
 // FANN_EXTERNAL int FANN_API fann_save_train_to_fixed(struct fann_train_data *data, const char *filename,
 // unsigned int decimal_point);
 function fann_save_train_to_fixed(Data: pfann_train_data; const Filename: PFANNChar; decimal_point: Cardinal): integer; stdcall;
-  external FANN_DLL_FILE name '_fann_save_train_to_fixed@12';
+  external FANN_DLL_FILE name 'fann_save_train_to_fixed';// '_fann_save_train_to_fixed@12';
 
 (* Group: Parameters *)
 
@@ -3148,7 +3148,7 @@ function fann_save_train_to_fixed(Data: pfann_train_data; const Filename: PFANNC
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL enum fann_train_enum FANN_API fann_get_training_algorithm(struct fann *ann);
-function fann_get_training_algorithm(ann: pfann): Tfann_train_enum; stdcall; external FANN_DLL_FILE name '_fann_get_training_algorithm@4';
+function fann_get_training_algorithm(ann: pfann): Tfann_train_enum; stdcall; external FANN_DLL_FILE name 'fann_get_training_algorithm';// '_fann_get_training_algorithm@4';
 
 (* Function: fann_set_training_algorithm
 
@@ -3161,7 +3161,7 @@ function fann_get_training_algorithm(ann: pfann): Tfann_train_enum; stdcall; ext
 // FANN_EXTERNAL void FANN_API fann_set_training_algorithm(struct fann *ann,
 // enum fann_train_enum training_algorithm);
 procedure fann_set_training_algorithm(ann: pfann; training_algorithm: Tfann_train_enum); stdcall;
-  external FANN_DLL_FILE name '_fann_set_training_algorithm@8';
+  external FANN_DLL_FILE name 'fann_set_training_algorithm';// '_fann_set_training_algorithm@8';
 
 (* Function: fann_get_learning_rate
 
@@ -3179,7 +3179,7 @@ procedure fann_set_training_algorithm(ann: pfann; training_algorithm: Tfann_trai
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_learning_rate(struct fann *ann);
-function fann_get_learning_rate(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_learning_rate@4';
+function fann_get_learning_rate(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_learning_rate';// '_fann_get_learning_rate@4';
 
 (* Function: fann_set_learning_rate
 
@@ -3190,7 +3190,7 @@ function fann_get_learning_rate(ann: pfann): Float; stdcall; external FANN_DLL_F
   This function appears in FANN >= 1.0.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_learning_rate(struct fann *ann, float learning_rate);
-procedure fann_set_learning_rate(ann: pfann; learning_rate: Float); stdcall; external FANN_DLL_FILE name '_fann_set_learning_rate@8';
+procedure fann_set_learning_rate(ann: pfann; learning_rate: Float); stdcall; external FANN_DLL_FILE name 'fann_set_learning_rate';// '_fann_set_learning_rate@8';
 
 (* Function: fann_get_learning_momentum
 
@@ -3209,7 +3209,7 @@ procedure fann_set_learning_rate(ann: pfann; learning_rate: Float); stdcall; ext
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_learning_momentum(struct fann *ann);
-function fann_get_learning_momentum(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_learning_momentum@4';
+function fann_get_learning_momentum(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_learning_momentum';// '_fann_get_learning_momentum@4';
 
 (* Function: fann_set_learning_momentum
 
@@ -3221,7 +3221,7 @@ function fann_get_learning_momentum(ann: pfann): Float; stdcall; external FANN_D
 *)
 // FANN_EXTERNAL void FANN_API fann_set_learning_momentum(struct fann *ann, float learning_momentum);
 procedure fann_set_learning_momentum(ann: pfann; learning_momentum: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_learning_momentum@8';
+  external FANN_DLL_FILE name 'fann_get_bit_fail_limit';// '_fann_set_learning_momentum@8';
 
 (* Function: fann_get_activation_function
 
@@ -3246,7 +3246,7 @@ procedure fann_set_learning_momentum(ann: pfann; learning_momentum: Float); stdc
 // int layer,
 // int neuron);
 function fann_get_activation_function(ann: pfann; layer: integer; neuron: integer): Tfann_activationfunc_enum; stdcall;
-  external FANN_DLL_FILE name '_fann_get_activation_function@12';
+  external FANN_DLL_FILE name 'fann_get_activation_function';// '_fann_get_activation_function@12';
 
 (* Function: fann_set_activation_function
 
@@ -3276,7 +3276,7 @@ function fann_get_activation_function(ann: pfann; layer: integer; neuron: intege
 // int layer,
 // int neuron);
 procedure fann_set_activation_function(ann: pfann; activation_function: Tfann_activationfunc_enum; layer: integer; neuron: integer);
-  stdcall; external FANN_DLL_FILE name '_fann_set_activation_function@16';
+  stdcall; external FANN_DLL_FILE name 'fann_set_activation_function';// '_fann_set_activation_function@16';
 
 (* Function: fann_set_activation_function_layer
 
@@ -3296,7 +3296,7 @@ procedure fann_set_activation_function(ann: pfann; activation_function: Tfann_ac
 // activation_function,
 // int layer);
 procedure fann_set_activation_function_layer(ann: pfann; activation_function: Tfann_activationfunc_enum; layer: integer); stdcall;
-  external FANN_DLL_FILE name '_fann_set_activation_function_layer@12';
+  external FANN_DLL_FILE name 'fann_set_activation_function_layer';// '_fann_set_activation_function_layer@12';
 
 (* Function: fann_set_activation_function_hidden
 
@@ -3312,7 +3312,7 @@ procedure fann_set_activation_function_layer(ann: pfann; activation_function: Tf
 // enum fann_activationfunc_enum
 // activation_function);
 procedure fann_set_activation_function_hidden(ann: pfann; activation_function: Tfann_activationfunc_enum); stdcall;
-  external FANN_DLL_FILE name '_fann_set_activation_function_hidden@8';
+  external FANN_DLL_FILE name 'fann_set_activation_function_hidden';// '_fann_set_activation_function_hidden@8';
 
 (* Function: fann_set_activation_function_output
 
@@ -3328,7 +3328,7 @@ procedure fann_set_activation_function_hidden(ann: pfann; activation_function: T
 // enum fann_activationfunc_enum
 // activation_function);
 procedure fann_set_activation_function_output(ann: pfann; activation_function: Tfann_activationfunc_enum); stdcall;
-  external FANN_DLL_FILE name '_fann_set_activation_function_output@8';
+  external FANN_DLL_FILE name 'fann_set_activation_function_output';// '_fann_set_activation_function_output@8';
 
 (* Function: fann_get_activation_steepness
 
@@ -3360,7 +3360,7 @@ procedure fann_set_activation_function_output(ann: pfann; activation_function: T
 // int layer,
 // int neuron);
 function fann_get_activation_steepness(ann: pfann; layer: integer; neuron: integer): fann_type; stdcall;
-  external FANN_DLL_FILE name '_fann_get_activation_steepness@12';
+  external FANN_DLL_FILE name 'fann_get_activation_steepness';// '_fann_get_activation_steepness@12';
 
 (* Function: fann_set_activation_steepness
 
@@ -3391,11 +3391,11 @@ function fann_get_activation_steepness(ann: pfann; layer: integer; neuron: integ
 // int neuron);
 procedure fann_set_activation_steepness(ann: pfann; steepness: fann_type; layer: integer; neuron: integer); stdcall;
   external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_activation_steepness@20';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_activation_steepness';//'_fann_set_activation_steepness@20';
 {$ELSE}
-  '_fann_set_activation_steepness@16';
-{$ENDIF}
+  'fann_set_activation_steepness';//'_fann_set_activation_steepness@16';
+{$ENDIF}// name ''
 (* Function: fann_set_activation_steepness_layer
 
   Set the activation steepness all of the neurons in layer number *layer*,
@@ -3413,11 +3413,11 @@ procedure fann_set_activation_steepness(ann: pfann; steepness: fann_type; layer:
 // fann_type steepness,
 // int layer);
 procedure fann_set_activation_steepness_layer(ann: pfann; steepness: fann_type; layer: integer); stdcall; external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_activation_steepness_layer@16';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_activation_steepness_layer';//'_fann_set_activation_steepness_layer@16';
 {$ELSE}
-  '_fann_set_activation_steepness_layer@12';
-{$ENDIF}
+  'fann_set_activation_steepness_layer';//'_fann_set_activation_steepness_layer@12';
+{$ENDIF}// name ''
 (* Function: fann_set_activation_steepness_hidden
 
   Set the steepness of the activation steepness in all of the hidden layers.
@@ -3431,11 +3431,11 @@ procedure fann_set_activation_steepness_layer(ann: pfann; steepness: fann_type; 
 // FANN_EXTERNAL void FANN_API fann_set_activation_steepness_hidden(struct fann *ann,
 // fann_type steepness);
 procedure fann_set_activation_steepness_hidden(ann: pfann; steepness: fann_type); stdcall; external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_activation_steepness_hidden@12';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_activation_steepness_hidden';//'_fann_set_activation_steepness_hidden@12';
 {$ELSE}
-  '_fann_set_activation_steepness_hidden@8';
-{$ENDIF}
+  'fann_set_activation_steepness_hidden';//'_fann_set_activation_steepness_hidden@8';
+{$ENDIF}// name ''
 (* Function: fann_set_activation_steepness_output
 
   Set the steepness of the activation steepness in the output layer.
@@ -3449,11 +3449,11 @@ procedure fann_set_activation_steepness_hidden(ann: pfann; steepness: fann_type)
 // FANN_EXTERNAL void FANN_API fann_set_activation_steepness_output(struct fann *ann,
 // fann_type steepness);
 procedure fann_set_activation_steepness_output(ann: pfann; steepness: fann_type); stdcall; external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_activation_steepness_output@12';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_activation_steepness_output';//'_fann_set_activation_steepness_output@12';
 {$ELSE}
-  '_fann_set_activation_steepness_output@8';
-{$ENDIF}
+  'fann_set_activation_steepness_output';//'_fann_set_activation_steepness_output@8';
+{$ENDIF}// name ''
 (* Function: fann_get_train_error_function
 
   Returns the error function used during training.
@@ -3469,7 +3469,7 @@ procedure fann_set_activation_steepness_output(ann: pfann; steepness: fann_type)
 *)
 // FANN_EXTERNAL enum fann_errorfunc_enum FANN_API fann_get_train_error_function(struct fann *ann);
 function fann_get_train_error_function(ann: pfann): Tfann_errorfunc_enum; stdcall;
-  external FANN_DLL_FILE name '_fann_get_train_error_function@4';
+  external FANN_DLL_FILE name 'fann_get_train_error_function';// '_fann_get_train_error_function@4';
 
 (* Function: fann_set_train_error_function
 
@@ -3486,7 +3486,7 @@ function fann_get_train_error_function(ann: pfann): Tfann_errorfunc_enum; stdcal
 // enum fann_errorfunc_enum
 // train_error_function);
 procedure fann_set_train_error_function(ann: pfann; train_error_function: Tfann_errorfunc_enum); stdcall;
-  external FANN_DLL_FILE name '_fann_set_train_error_function@8';
+  external FANN_DLL_FILE name 'fann_set_train_error_function';// '_fann_set_train_error_function@8';
 
 (* Function: fann_get_train_stop_function
 
@@ -3503,7 +3503,7 @@ procedure fann_set_train_error_function(ann: pfann; train_error_function: Tfann_
 *)
 // FANN_EXTERNAL enum fann_stopfunc_enum FANN_API fann_get_train_stop_function(struct fann *ann);
 function fann_get_train_stop_function(ann: pfann): Tfann_stopfunc_enum; stdcall;
-  external FANN_DLL_FILE name '_fann_get_train_stop_function@4';
+  external FANN_DLL_FILE name 'fann_get_train_stop_function';// '_fann_get_train_stop_function@4';
 
 (* Function: fann_set_train_stop_function
 
@@ -3521,7 +3521,7 @@ function fann_get_train_stop_function(ann: pfann): Tfann_stopfunc_enum; stdcall;
 // FANN_EXTERNAL void FANN_API fann_set_train_stop_function(struct fann *ann,
 // enum fann_stopfunc_enum train_stop_function);
 procedure fann_set_train_stop_function(ann: pfann; train_stop_function: Tfann_stopfunc_enum); stdcall;
-  external FANN_DLL_FILE name '_fann_set_train_stop_function@8';
+  external FANN_DLL_FILE name 'fann_set_train_stop_function';// '_fann_set_train_stop_function@8';
 
 (* Function: fann_get_bit_fail_limit
 
@@ -3542,7 +3542,7 @@ procedure fann_set_train_stop_function(ann: pfann; train_stop_function: Tfann_st
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL fann_type FANN_API fann_get_bit_fail_limit(struct fann *ann);
-function fann_get_bit_fail_limit(ann: pfann): fann_type; stdcall; external FANN_DLL_FILE name '_fann_get_bit_fail_limit@4';
+function fann_get_bit_fail_limit(ann: pfann): fann_type; stdcall; external FANN_DLL_FILE name 'fann_get_bit_fail_limit';// '_fann_get_bit_fail_limit@4';
 
 (* Function: fann_set_bit_fail_limit
 
@@ -3555,11 +3555,11 @@ function fann_get_bit_fail_limit(ann: pfann): fann_type; stdcall; external FANN_
 *)
 // FANN_EXTERNAL void FANN_API fann_set_bit_fail_limit(struct fann *ann, fann_type bit_fail_limit);
 procedure fann_set_bit_fail_limit(ann: pfann; bit_fail_limit: fann_type); stdcall; external FANN_DLL_FILE name
-{$IFDEF Defined(DOUBLEFANN)}
-  '_fann_set_bit_fail_limit@12';
+{$IFDEF Defined(DOUBLEFANN)} 
+  'fann_set_bit_fail_limit';//'_fann_set_bit_fail_limit@12';
 {$ELSE}
-  '_fann_set_bit_fail_limit@8';
-{$ENDIF}
+  'fann_set_bit_fail_limit';//'_fann_set_bit_fail_limit@8';
+{$ENDIF}// name ''
 (* Function: fann_set_callback
 
   Sets the callback function for use during training.
@@ -3571,7 +3571,7 @@ procedure fann_set_bit_fail_limit(ann: pfann; bit_fail_limit: fann_type); stdcal
   This function appears in FANN >= 2.0.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_callback(struct fann *ann, fann_callback_type callback);
-procedure fann_set_callback(ann: pfann; callback: Tfann_callback_type); stdcall; external FANN_DLL_FILE name '_fann_set_callback@8';
+procedure fann_set_callback(ann: pfann; callback: Tfann_callback_type); stdcall; external FANN_DLL_FILE name 'fann_set_callback';// '_fann_set_callback@8';
 
 (* Function: fann_get_quickprop_decay
 
@@ -3587,7 +3587,7 @@ procedure fann_set_callback(ann: pfann; callback: Tfann_callback_type); stdcall;
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_quickprop_decay(struct fann *ann);
-function fann_get_quickprop_decay(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_quickprop_decay@4';
+function fann_get_quickprop_decay(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_quickprop_decay';// '_fann_get_quickprop_decay@4';
 
 (* Function: fann_set_quickprop_decay
 
@@ -3599,7 +3599,7 @@ function fann_get_quickprop_decay(ann: pfann): Float; stdcall; external FANN_DLL
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_quickprop_decay(struct fann *ann, float quickprop_decay);
-procedure fann_set_quickprop_decay(ann: pfann; quickprop_decay: Float); stdcall; external FANN_DLL_FILE name '_fann_set_quickprop_decay@8';
+procedure fann_set_quickprop_decay(ann: pfann; quickprop_decay: Float); stdcall; external FANN_DLL_FILE name 'fann_set_quickprop_decay';// '_fann_set_quickprop_decay@8';
 
 (* Function: fann_get_quickprop_mu
 
@@ -3615,7 +3615,7 @@ procedure fann_set_quickprop_decay(ann: pfann; quickprop_decay: Float); stdcall;
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_quickprop_mu(struct fann *ann);
-function fann_get_quickprop_mu(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_quickprop_mu@4';
+function fann_get_quickprop_mu(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_quickprop_mu';// '_fann_get_quickprop_mu@4';
 
 (* Function: fann_set_quickprop_mu
 
@@ -3627,7 +3627,7 @@ function fann_get_quickprop_mu(ann: pfann): Float; stdcall; external FANN_DLL_FI
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_quickprop_mu(struct fann *ann, float quickprop_mu);
-procedure fann_set_quickprop_mu(ann: pfann; Mu: Float); stdcall; external FANN_DLL_FILE name '_fann_set_quickprop_mu@8';
+procedure fann_set_quickprop_mu(ann: pfann; Mu: Float); stdcall; external FANN_DLL_FILE name 'fann_set_quickprop_mu';// '_fann_set_quickprop_mu@8';
 
 (* Function: fann_get_rprop_increase_factor
 
@@ -3642,7 +3642,7 @@ procedure fann_set_quickprop_mu(ann: pfann; Mu: Float); stdcall; external FANN_D
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_rprop_increase_factor(struct fann *ann);
-function fann_get_rprop_increase_factor(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_rprop_increase_factor@4';
+function fann_get_rprop_increase_factor(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_rprop_increase_factor';// '_fann_get_rprop_increase_factor@4';
 
 (* Function: fann_set_rprop_increase_factor
 
@@ -3656,7 +3656,7 @@ function fann_get_rprop_increase_factor(ann: pfann): Float; stdcall; external FA
 // FANN_EXTERNAL void FANN_API fann_set_rprop_increase_factor(struct fann *ann,
 // float rprop_increase_factor);
 procedure fann_set_rprop_increase_factor(ann: pfann; rprop_increase_factor: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_rprop_increase_factor@8';
+  external FANN_DLL_FILE name 'fann_set_rprop_increase_factor';// '_fann_set_rprop_increase_factor@8';
 
 (* Function: fann_get_rprop_decrease_factor
 
@@ -3670,7 +3670,7 @@ procedure fann_set_rprop_increase_factor(ann: pfann; rprop_increase_factor: Floa
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_rprop_decrease_factor(struct fann *ann);
-function fann_get_rprop_decrease_factor(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_rprop_decrease_factor@4';
+function fann_get_rprop_decrease_factor(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_rprop_decrease_factor';// '_fann_get_rprop_decrease_factor@4';
 
 (* Function: fann_set_rprop_decrease_factor
 
@@ -3684,7 +3684,7 @@ function fann_get_rprop_decrease_factor(ann: pfann): Float; stdcall; external FA
 // FANN_EXTERNAL void FANN_API fann_set_rprop_decrease_factor(struct fann *ann,
 // float rprop_decrease_factor);
 procedure fann_set_rprop_decrease_factor(ann: pfann; rprop_decrease_factor: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_rprop_decrease_factor@8';
+  external FANN_DLL_FILE name 'fann_set_rprop_decrease_factor';// '_fann_set_rprop_decrease_factor@8';
 
 (* Function: fann_get_rprop_delta_min
 
@@ -3698,7 +3698,7 @@ procedure fann_set_rprop_decrease_factor(ann: pfann; rprop_decrease_factor: Floa
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_rprop_delta_min(struct fann * Ann);
-function fann_get_rprop_delta_min(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_rprop_delta_min@4';
+function fann_get_rprop_delta_min(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_rprop_delta_min';// '_fann_get_rprop_delta_min@4';
 
 (* Function: fann_set_rprop_delta_min
 
@@ -3710,7 +3710,7 @@ function fann_get_rprop_delta_min(ann: pfann): Float; stdcall; external FANN_DLL
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_rprop_delta_min(struct fann * Ann, float rprop_delta_min);
-procedure fann_set_rprop_delta_min(ann: pfann; rprop_delta_min: Float); stdcall; external FANN_DLL_FILE name '_fann_set_rprop_delta_min@8';
+procedure fann_set_rprop_delta_min(ann: pfann; rprop_delta_min: Float); stdcall; external FANN_DLL_FILE name 'fann_set_rprop_delta_min';// '_fann_set_rprop_delta_min@8';
 
 (* Function: fann_get_rprop_delta_max
 
@@ -3724,7 +3724,7 @@ procedure fann_set_rprop_delta_min(ann: pfann; rprop_delta_min: Float); stdcall;
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_rprop_delta_max(struct fann * Ann);
-function fann_get_rprop_delta_max(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_rprop_delta_max@4';
+function fann_get_rprop_delta_max(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_rprop_delta_max';// '_fann_get_rprop_delta_max@4';
 
 (* Function: fann_set_rprop_delta_max
 
@@ -3736,7 +3736,7 @@ function fann_get_rprop_delta_max(ann: pfann): Float; stdcall; external FANN_DLL
   This function appears in FANN >= 1.2.0.
 *)
 // FANN_EXTERNAL void FANN_API fann_set_rprop_delta_max(struct fann * Ann, float rprop_delta_max);
-procedure fann_set_rprop_delta_max(ann: pfann; rprop_delta_max: Float); stdcall; external FANN_DLL_FILE name '_fann_set_rprop_delta_max@8';
+procedure fann_set_rprop_delta_max(ann: pfann; rprop_delta_max: Float); stdcall; external FANN_DLL_FILE name 'fann_set_rprop_delta_max';// '_fann_set_rprop_delta_max@8';
 
 (* Function: fann_get_rprop_delta_zero
 
@@ -3750,7 +3750,7 @@ procedure fann_set_rprop_delta_max(ann: pfann; rprop_delta_max: Float); stdcall;
   This function appears in FANN >= 2.1.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_rprop_delta_zero(struct fann * Ann);
-function fann_get_rprop_delta_zero(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_rprop_delta_zero@4';
+function fann_get_rprop_delta_zero(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_rprop_delta_zero';// '_fann_get_rprop_delta_zero@4';
 
 (* Function: fann_set_rprop_delta_zero
 
@@ -3763,7 +3763,7 @@ function fann_get_rprop_delta_zero(ann: pfann): Float; stdcall; external FANN_DL
 *)
 // FANN_EXTERNAL void FANN_API fann_set_rprop_delta_zero(struct fann * Ann, float rprop_delta_max);
 procedure fann_set_rprop_delta_zero(ann: pfann; rprop_delta_zero: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_rprop_delta_zero@8';
+  external FANN_DLL_FILE name 'fann_set_rprop_delta_zero';// '_fann_set_rprop_delta_zero@8';
 
 (* Method: fann_get_sarprop_weight_decay_shift
 
@@ -3778,7 +3778,7 @@ procedure fann_set_rprop_delta_zero(ann: pfann; rprop_delta_zero: Float); stdcal
 *)
 // FANN_EXTERNAL float FANN_API fann_get_sarprop_weight_decay_shift(struct fann * Ann);
 function fann_get_sarprop_weight_decay_shift(ann: pfann): Float; stdcall;
-  external FANN_DLL_FILE name '_fann_get_sarprop_weight_decay_shift@4';
+  external FANN_DLL_FILE name 'fann_get_sarprop_step_error_shift';// '_fann_get_sarprop_weight_decay_shift@4';
 
 (* Method: fann_set_sarprop_weight_decay_shift
 
@@ -3791,7 +3791,7 @@ function fann_get_sarprop_weight_decay_shift(ann: pfann): Float; stdcall;
 *)
 // FANN_EXTERNAL void FANN_API fann_set_sarprop_weight_decay_shift(struct fann * Ann, float sarprop_weight_decay_shift);
 procedure fann_set_sarprop_weight_decay_shift(ann: pfann; sarprop_weight_decay_shift: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_sarprop_weight_decay_shift@8';
+  external FANN_DLL_FILE name 'fann_set_sarprop_weight_decay_shift';// '_fann_set_sarprop_weight_decay_shift@8';
 
 (* Method: fann_get_sarprop_step_error_threshold_factor
 
@@ -3806,7 +3806,7 @@ procedure fann_set_sarprop_weight_decay_shift(ann: pfann; sarprop_weight_decay_s
 *)
 // FANN_EXTERNAL float FANN_API fann_get_sarprop_step_error_threshold_factor(struct fann * Ann);
 function fann_get_sarprop_step_error_threshold_factor(ann: pfann): Float; stdcall;
-  external FANN_DLL_FILE name '_fann_get_sarprop_step_error_threshold_factor@4';
+  external FANN_DLL_FILE name 'fann_get_sarprop_step_error_threshold_factor';// '_fann_get_sarprop_step_error_threshold_factor@4';
 
 (* Method: fann_set_sarprop_step_error_threshold_factor
 
@@ -3819,7 +3819,7 @@ function fann_get_sarprop_step_error_threshold_factor(ann: pfann): Float; stdcal
 *)
 // FANN_EXTERNAL void FANN_API fann_set_sarprop_step_error_threshold_factor(struct fann * Ann, float sarprop_step_error_threshold_factor);
 procedure fann_set_sarprop_step_error_threshold_factor(ann: pfann; sarprop_step_error_threshold_factor: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_sarprop_step_error_threshold_factor@8';
+  external FANN_DLL_FILE name 'fann_set_sarprop_step_error_threshold_factor';// '_fann_set_sarprop_step_error_threshold_factor@8';
 
 (* Method: fann_get_sarprop_step_error_shift
 
@@ -3833,7 +3833,7 @@ procedure fann_set_sarprop_step_error_threshold_factor(ann: pfann; sarprop_step_
   This function appears in FANN >= 2.1.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_sarprop_step_error_shift(struct fann * Ann);
-function fann_get_sarprop_step_error_shift(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_sarprop_step_error_shift@4';
+function fann_get_sarprop_step_error_shift(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_sarprop_step_error_shift';// '_fann_get_sarprop_step_error_shift@4';
 
 (* Method: fann_set_sarprop_step_error_shift
 
@@ -3846,7 +3846,7 @@ function fann_get_sarprop_step_error_shift(ann: pfann): Float; stdcall; external
 *)
 // FANN_EXTERNAL void FANN_API fann_set_sarprop_step_error_shift(struct fann * Ann, float sarprop_step_error_shift);
 procedure fann_set_sarprop_step_error_shift(ann: pfann; sarprop_step_error_shift: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_sarprop_step_error_shift@8';
+  external FANN_DLL_FILE name 'fann_set_sarprop_step_error_shift';// '_fann_set_sarprop_step_error_shift@8';
 
 (* Method: fann_get_sarprop_temperature
 
@@ -3860,7 +3860,7 @@ procedure fann_set_sarprop_step_error_shift(ann: pfann; sarprop_step_error_shift
   This function appears in FANN >= 2.1.0.
 *)
 // FANN_EXTERNAL float FANN_API fann_get_sarprop_temperature(struct fann * Ann);
-function fann_get_sarprop_temperature(ann: pfann): Float; stdcall; external FANN_DLL_FILE name '_fann_get_sarprop_temperature@4';
+function fann_get_sarprop_temperature(ann: pfann): Float; stdcall; external FANN_DLL_FILE name 'fann_get_sarprop_temperature';// '_fann_get_sarprop_temperature@4';
 
 (* Method: fann_set_sarprop_temperature
 
@@ -3873,7 +3873,7 @@ function fann_get_sarprop_temperature(ann: pfann): Float; stdcall; external FANN
 *)
 // FANN_EXTERNAL void FANN_API fann_set_sarprop_temperature(struct fann * Ann, float sarprop_temperature);
 procedure fann_set_sarprop_temperature(ann: pfann; sarprop_temperature: Float); stdcall;
-  external FANN_DLL_FILE name '_fann_set_sarprop_temperature@8';
+  external FANN_DLL_FILE name 'fann_set_sarprop_temperature';// '_fann_set_sarprop_temperature@8';
 
 implementation
 
